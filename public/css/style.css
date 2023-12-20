@@ -1,0 +1,201 @@
+:root {
+  --primary-color: #b7ce13;
+  --secondary-color: #1f7b9b;
+  --body-background-color: #f4f5f6;
+  --grey-text: #bbbbbb;
+  --category-color: #cccccc;
+  --smaller-font: 0.8rem;
+
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--body-background-color);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+}
+
+.table-clickable tbody tr {
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.header-text {
+  font-weight: 700;
+  font-size: x-large;
+}
+
+main {
+  flex: 1 0 auto;
+
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 0;
+  font-size: small;
+  flex-shrink: 0;
+}
+
+.footer-text {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.white-box {
+  background-color: white;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+/* Floating Button */
+
+.floating-container {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  bottom: 0;
+  right: 0;
+  margin: 35px 25px 60px 25px;
+}
+.floating-container:hover {
+  height: 300px;
+}
+.floating-container:hover .floating-button {
+  box-shadow: 0 10px 25px rgba(234, 196, 53, 0.6);
+  -webkit-transform: translatey(5px);
+          transform: translatey(5px);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.floating-container .floating-button {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: var(--vbt-secondary-color);
+  bottom: 0;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  line-height: 65px;
+  text-align: center;
+  font-size: 23px;
+  z-index: 100;
+  box-shadow: 0 10px 25px -5px rgba(234, 196, 53, 0.6);
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.floating-container .material-icons {
+  vertical-align: middle;
+  font-size: 24px;
+}
+
+/* Bootstrap Tweaks */
+
+.d-flex {
+  gap:20px;
+  flex-direction: row;
+  flex-flow: wrap;
+
+}
+
+/* Card Layout */
+
+.method-card--wrapper, .method-single--wrapper {
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.method-card {
+  width: calc((100% / 4) - (30px * (4 - 1)) / 4);
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid;
+  position: relative;
+  top: 0;
+  transition: top ease 0.2s;
+}
+
+.method-card:hover {
+  top: -3px;
+}
+
+a.method-card--link {
+  text-decoration: none;
+}
+
+.method-card--category-background {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.method-card--category {
+  font-weight: bolder;
+}
+
+.method-card--author {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.method-card--body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.method-card--author img {
+  border-radius: 50%;
+}
+
+.method-card--author-name {
+  color: var(--grey-text);
+  font-size: var(--smaller-font);
+}
+
+
+/* Method Single */
+
+.method-single--metainfos {
+  width: 300px;
+  font-size: 0.9rem;
+}
+
+.method-single--content {
+  width: calc(100% - 330px);
+}
+
+span.category-color {
+  font-weight: 700;
+  color: var(--category-color);
+}
