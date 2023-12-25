@@ -5,6 +5,7 @@
   --grey-text: #bbbbbb;
   --category-color: #cccccc;
   --smaller-font: 0.8rem;
+  --border-radius: 8px;
 
 }
 
@@ -120,6 +121,16 @@ footer {
 
 }
 
+/* Filter Bar */
+
+.methods-filter {
+  margin: 40px 0px 80px 0px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+
 /* Card Layout */
 
 .method-card--wrapper, .method-single--wrapper {
@@ -134,7 +145,7 @@ footer {
   width: calc((100% / 4) - (30px * (4 - 1)) / 4);
   box-sizing: border-box;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   border: 1px solid;
   position: relative;
@@ -189,6 +200,8 @@ a.method-card--link {
 .method-single--metainfos {
   width: 300px;
   font-size: 0.9rem;
+  border-right: 1px solid var(--grey-text);
+  padding-right: 30px;
 }
 
 .method-single--content {
@@ -198,4 +211,13 @@ a.method-card--link {
 span.category-color {
   font-weight: 700;
   color: var(--category-color);
+}
+
+.method-single--heading {
+  padding-left:20px;
+  border-left: 8px solid var(--category-color);
+}
+
+.method-single--heading h1 {
+  font-weight: 900;
 }

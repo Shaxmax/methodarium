@@ -3,14 +3,11 @@
 @section('content')
 
 <script type="text/javascript">
-
-    var php_var = @json($method->color_code);
-
+    var php_var = @json($method->category->color_code);
     var root = document.querySelector(':root');
     var rootStyles = getComputedStyle(root);
     var categoryColor = rootStyles.getPropertyValue('--category-color');
     console.log('categoryColor: ', php_var);
-
     root.style.setProperty('--category-color', php_var);
 </script>
 
@@ -36,8 +33,10 @@
 </div>
 
 <div class="container">
+    <div class="method-single--heading">
         <h1>{{ $method->title }}</h1>
         Ziel: <span>{{ $method->goal }}</span> {{ $method->color_code }}
+    </div>
 </div>
 
 <br><br>

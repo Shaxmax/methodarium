@@ -22,12 +22,21 @@
     <!-- Page Heading -->
         <div class="container">
             <h1>Methodenübersicht</h1>
-            <p>NEVEREST Methodarium</p>        
+            <p>NEVEREST Methodarium</p>
+            
+            <div class="methods-filter">
+                <form method="GET" action="{{ route('methods.index') }}">
+                    <div class="input-group mb-3">
+                        <input type="text" name="title" placeholder="Methode suchen ..." value="{{ request('title') }}" class="form-control" />
+                        <div class="input-group">
+                            <button type="submit" class="btn btn-outline-secondary">Suchen</button>
+                            <a href="{{ route('methods.index') }}" class="btn btn-outline-secondary">Filter Zurücksetzen</a>
+                        </div>
+                    </div>
+                </form>    
+            </div>        
         </div>
     <!-- End Page Heading -->
-
-
-
 
     <div class="container">
 
