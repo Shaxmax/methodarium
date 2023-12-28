@@ -1,11 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\User;
 use App\Models\Method;
 use App\Models\Category;
-use App\Models\User;
-use App\Http\Controllers\MethodController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MethodController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SourceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +25,13 @@ Route::get('/', function () {
 });
 
 Route::resource('methods', MethodController::class);
+Route::resource('users', UserController::class);
+Route::resource('categories', CategoryController::class);
+Route::resource('sources', SourceController::class);
+
+
+Route::post('/login', [UserController::class, 'login']);
+Route::post('/logout', [UserController::class, 'logout']);
+
 
 

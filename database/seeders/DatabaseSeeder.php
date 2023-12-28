@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
             'prefix' => 'zum',
             'category' => 'Einstieg ins Thema',
             'font_color' => '#FFFFFF',
-            'color_code' => '#FC6000A'
+            'color_code' => '#FC600A'
         ]);
 
         \App\Models\Category::create([
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
             'prefix' => 'zur',
             'category' => 'Gruppeneinteilung',
             'font_color' => '#000000',
-            'color_code' => 'FCCC1A'
+            'color_code' => '#FCCC1A'
         ]);
 
         \App\Models\Category::create([
@@ -133,13 +133,27 @@ class DatabaseSeeder extends Seeder
             'color_code' => '#6b9b1f'
         ]);
 
+        // Create Sources
+
+        \App\Models\Source::create([
+            'originator' => 'Daniela Reuter',
+            'source' => '202 Methoden, die begeistern!'
+        ]);
+        
+        \App\Models\Source::create([
+            'originator' => 'Jennifer Frank-Schagerl',
+            'source' => 'Die 50 besten kooperativen Online-Übungen für lebendige Teamentwicklung',
+            'link' => 'https://www.managerseminare.de/Trainingsmedien/Buecher/Die-50-besten-kooperativen-Online-UEbungen-fuer-lebendige-Teamentwicklung,6936'
+        ]);
+        
+        
         // Create Methoden
 
         \App\Models\Method::create([
             'title' => '3 Hashtags',
             'category_id' => '1',
             'goal' => 'Die Teilnehmenden stellen sich vor',
-            'stage' => 'WARUM',
+            'stage' => '["WARUM"]',
             'complexity' => '1',
             'duration' => '15 - 20 Min.',
             'participants' => 'unbegrenzt',
@@ -152,16 +166,16 @@ class DatabaseSeeder extends Seeder
             'preparation' => 'den eigenen Namen vorbereiten',
             'preparation_level' => '3',
             'material' => 'Flipcharts, Moderationskarten',
-            'source' => 'Daniela Reuter - 202 Methoden, die begeistern!',
+            'source_id' => '1',
             'online' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam',
-            'author' => '1'
+            'user_id' => '1'
         ]);
 
         \App\Models\Method::create([
             'title' => 'Brainstorming',
             'category_id' => '6',
             'goal' => 'Die Teilnehmende finden kreative Lösungen',
-            'stage' => 'WARUM',
+            'stage' => '["WARUM","WAS","WAS WENN"]',
             'complexity' => '1',
             'duration' => '5 - 10 Min.',
             'participants' => 'unbegrenzt',
@@ -174,16 +188,16 @@ class DatabaseSeeder extends Seeder
             'preparation' => 'den eigenen Namen vorbereiten',
             'preparation_level' => '5',
             'material' => 'Flipcharts, Moderationskarten',
-            'source' => 'Daniela Reuter - 202 Methoden, die begeistern!',
+            'source_id' => '1',
             'online' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam',
-            'author' => '2'
+            'user_id' => '2'
         ]);
 
         \App\Models\Method::create([
             'title' => 'Körperknobeln',
             'category_id' => '3',
             'goal' => 'Aktivierung der Teilnehmenden',
-            'stage' => 'WAS',
+            'stage' => '["WARUM","WAS"]',
             'complexity' => '3',
             'duration' => '10 Min.',
             'participants' => '6 bis 10 Teilnehmende',
@@ -196,9 +210,9 @@ class DatabaseSeeder extends Seeder
             'preparation' => 'den eigenen Namen vorbereiten',
             'preparation_level' => '2',
             'material' => 'Flipcharts, Moderationskarten',
-            'source' => 'Daniela Reuter - 202 Methoden, die begeistern!',
+            'source_id' => '2',
             'online' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam',
-            'author' => '1'
+            'user_id' => '1'
         ]);
 
 
@@ -206,29 +220,3 @@ class DatabaseSeeder extends Seeder
     }
 }
 
-
-/*
-
-            $table->id();
-            $table->text('title');
-            $table->text('category');
-            $table->text('goal');
-            $table->text('stage');
-            $table->smallinteger('complexity');
-            $table->string('duration');
-            $table->string('participants');
-            $table->string('social_form');
-            $table->string('learning_environment');
-            $table->text('explanation');
-            $table->text('example')->nullable();
-            $table->text('obstacles')->nullable();
-            $table->text('tips')->nullable();
-            $table->smallinteger('preparation_level');
-            $table->string('preparation');
-            $table->string('material');
-            $table->string('source')->nullable();
-            $table->text('online')->nullable();
-            $table->smallinteger('author');
-            $table->timestamps();
-
-*/

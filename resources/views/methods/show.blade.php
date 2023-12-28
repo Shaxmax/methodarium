@@ -96,11 +96,20 @@
             </div>
             <div>
                 <h2 class="category-color">Quelle(n)</h2>
-                <p>{{ $method->source }}</p>
+                <ul>
+                    <li>
+                        @unless($method->source->link == NULL )
+                        {{ $method->source->originator }} - {{ $method->source->source }}
+                        @else
+                        <a href="{{ $method->source->link }}">{{ $method->source->originator }} - {{ $method->source->source }}</a>
+                        @endunless
+                    </li>
+                </ul>
+                
             </div>
             <div class="card-author">
                 <img src="https://placekitten.com/32/32">
-                <div class="card-author-name">Sabrina Meidl</div>
+                <div class="card-author-name">{{ $method->user->name }}</div>
             </div>  
         </div>
     </div>

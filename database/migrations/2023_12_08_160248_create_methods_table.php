@@ -16,26 +16,27 @@ return new class extends Migration
             $table->text('title');
             $table->unsignedBigInteger('category_id');
             $table->text('goal');
-            $table->text('stage');
+            $table->json('stage');
             $table->smallinteger('complexity');
-            $table->string('duration');
-            $table->string('participants');
-            $table->string('social_form');
-            $table->string('learning_environment');
+            $table->text('duration');
+            $table->text('participants');
+            $table->text('social_form');
+            $table->text('learning_environment');
             $table->text('explanation');
             $table->text('example')->nullable();
             $table->text('obstacles')->nullable();
             $table->text('tips')->nullable();
             $table->smallinteger('preparation_level');
-            $table->string('preparation');
-            $table->string('material');
-            $table->string('source')->nullable();
+            $table->text('preparation');
+            $table->text('material');
+            $table->unsignedBigInteger('source_id')->nullable();
             $table->text('online')->nullable();
-            $table->smallinteger('author');
+            $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

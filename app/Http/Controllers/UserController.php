@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
@@ -13,8 +14,8 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        $users = DB::table('users')->get();
+        $users = User :: withCount ('methods')->get();
  
-        return view('user.index', ['users' => $users]);
+        return view('users.index', ['users' => $users]);
     }
 }

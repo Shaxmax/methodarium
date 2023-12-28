@@ -55,7 +55,7 @@
                             <div class="method-card--category" style="color: {{ $method->color_code }}">{{ $method->category }}</div>
                             <div class="method-card--author">
                                 <img src="https://placekitten.com/32/32">
-                                <div class="method-card--author-name">Sabrina Meidl</div>
+                                <div class="method-card--author-name">{{ $method->user->name }}</div>
                             </div>
                         </div>
                     </a>
@@ -73,5 +73,11 @@
     </div>
 
 </section>
+
+<!-- Floating Button Start -->
+
+<a href="{{route('methods.create')}}"><div class="floating-container">
+<div class="floating-button"><i class="material-icons">add</i></div>
+</div></a>
 
 @endsection
